@@ -1,0 +1,26 @@
+FUNCTION PALE(str,i,j) : BOOLEAN
+VAR
+    p : BOOLEAN:=true;
+BEGIN
+    IF (str[i]!=str[j] && i>j) THEN
+        p:=false
+    ELSE
+        pale(str,i+1,j)
+    END_IF                                                                              
+    RETURN p ;
+END
+
+
+ALGORITHM main
+VAR
+    str:STRING;
+     i:INTEGER:=0;
+     j:INTEGER;
+BEGIN
+    j:=str.length-1
+    IF (pale(str,i,j)) THEN
+        write('it')
+    ELSE
+        write('not')
+    END_IF
+END
